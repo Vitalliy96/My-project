@@ -1,0 +1,168 @@
+@import "./reset.css";
+/*------------------------------------------------------------*/
+:root {
+	--text-h-color: #2e293b;
+	--text-silver-color: #9b98a1;
+	--text-white-color: #fff;
+	--text-hover-color: #0d51ff;
+	--text-hover2-color: #11e1b8;
+}
+
+body {
+	font-family: "Josefin Sans", sans-serif;
+	font-size: 16px;
+	color: var(--text-silver-color);
+}
+
+/*------------------------------------------------------------*/
+
+.header__container {
+	display: flex;
+	align-items: center;
+	max-width: 1130px;
+	min-height: 72px;
+	margin: 0 auto;
+	padding: 0 15px;
+	background: #fff;
+}
+
+.header__logo {
+	position: relative;
+	z-index: 5;
+}
+
+.header__logo img {
+	height: 22px;
+	width: 142px;
+	padding-right: 10px;
+}
+
+.header__menu {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*------------------------------------------------------------*/
+
+.menu__list {
+	display: bl;
+	margin: 0;
+	padding: 0;
+}
+
+.menu__item {
+	position: relative;
+	margin: 0 25px;
+}
+
+.menu__item :hover {
+	color: var(--text-hover-color);
+}
+
+.menu__item:last-child::after {
+	content: "";
+	position: absolute;
+	top: -7px;
+	left: 85px;
+	background: url("img/arrow-down.png") 0/ 20px 20px no-repeat;
+	width: 25px;
+	height: 25px;
+}
+
+.menu__link:hover::before {
+	position: absolute;
+	top: 35%;
+	left: -8px;
+	content: "";
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: var(--text-hover-color);
+	margin-right: 5px;
+	margin-bottom: 2px;
+}
+
+.menu__link {
+	color: #9b98a1;
+}
+
+/* -------------------------------------- */
+
+.header__button {
+	height: 40px;
+	width: 40px;
+	margin-left: 50px;
+	border-radius: 50%;
+}
+
+.header__language img {
+	height: 25px;
+}
+
+/* -------------------------------------- */
+
+/* PC */
+@media (max-width: 1130px) {
+	.header__container {
+		max-width: 970px;
+	}
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+	.header__container {
+		max-width: 750px;
+	}
+
+	.menu__item {
+		margin: 0 10px;
+	}
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+	.header__menu {
+	justify-content: start;
+	}
+
+	.menu__list{
+		margin-top: 30px;
+		margin-left: 25px;
+	}
+
+	.menu__item{
+		margin-bottom: 25px;
+	}
+
+	.header__logo {
+		flex: 0 0 37px;
+		overflow: hidden;
+	}
+
+	.header__container {
+		margin-top: 4px;
+		min-height: 52px;
+	}
+
+	.header__button {
+		margin-left: 40px;
+	}
+	.header__language {
+		display: none;
+	}
+
+	.navbar-toggler{
+		padding: 0;
+		height: 30px;
+		width: 45px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: none;
+	}
+	
+}
+
+/* -------------------------------------------------------- */
+
+
