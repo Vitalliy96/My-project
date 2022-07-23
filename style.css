@@ -1,17 +1,19 @@
 @import "./reset.css";
 /*------------------------------------------------------------*/
 :root {
-	--text-h-color: #2e293b;
-	--text-silver-color: #9b98a1;
-	--text-white-color: #fff;
-	--text-hover-color: #0d51ff;
-	--text-hover2-color: #11e1b8;
+	--black: #000000;
+	--dark-purple: #2e293b;
+	--silver: #9b98a1;
+	--white: #fff;
+	--blue: #0d51ff;
+	--aquamarine: #11e1b8;
 }
 
 body {
 	font-family: "Josefin Sans", sans-serif;
 	font-size: 16px;
-	color: var(--text-silver-color);
+	color: var(--silver);
+	padding-top: 72px;
 }
 
 /*------------------------------------------------------------*/
@@ -23,7 +25,7 @@ body {
 	min-height: 72px;
 	margin: 0 auto;
 	padding: 0 15px;
-	background: #fff;
+	background-color: var(--white);
 }
 
 .header__logo {
@@ -31,42 +33,42 @@ body {
 	z-index: 5;
 }
 
-.header__logo img {
-	height: 22px;
-	width: 142px;
-	padding-right: 10px;
-}
-
 .header__menu {
 	display: flex;
 	justify-content: flex-end;
 }
 
-/*------------------------------------------------------------*/
-
-.menu__list {
-	display: bl;
-	margin: 0;
-	padding: 0;
+.header__button {
+	height: 40px;
+	width: 40px;
+	margin-left: 50px;
+	border-radius: 50%;
 }
+
+.header__button-img {
+	height: 25px;
+}
+
+/*------------------------------------------------------------*/
 
 .menu__item {
 	position: relative;
 	margin: 0 25px;
 }
 
-.menu__item :hover {
-	color: var(--text-hover-color);
+.menu__item:hover {
+	color: var(--blue);
 }
 
-.menu__item:last-child::after {
-	content: "";
-	position: absolute;
-	top: -7px;
-	left: 85px;
-	background: url("img/arrow-down.png") 0/ 20px 20px no-repeat;
-	width: 25px;
-	height: 25px;
+.menu__link {
+	color: var(--black);
+	opacity: 0.5;
+	line-height: 19.2px;
+	text-align: center;
+}
+
+.menu__link:hover {
+	opacity: 1;
 }
 
 .menu__link:hover::before {
@@ -77,81 +79,126 @@ body {
 	width: 4px;
 	height: 4px;
 	border-radius: 50%;
-	background: var(--text-hover-color);
-	margin-right: 5px;
-	margin-bottom: 2px;
+	background-color: var(--blue);
 }
 
-.menu__link {
-	color: #9b98a1;
+.menu__hidden {
+	display: none;
 }
 
-/* -------------------------------------- */
+.menu__button {
+	position: relative;
+}
 
-.header__button {
-	height: 40px;
-	width: 40px;
-	margin-left: 50px;
+.button {
+	display: flex;
+	align-items: center;
+	text-align: left;
+	margin-left: 18px;
+	background-color: var(--white);
+}
+
+.button:hover {
+	color: var(--blue);
+}
+
+.button:hover::before {
+	position: absolute;
+	content: "";
+	top: 35%;
+	left: 10px;
+	width: 4px;
+	height: 4px;
 	border-radius: 50%;
+	background-color: var(--blue);
 }
 
-.header__language img {
-	height: 25px;
+.menu__button-text {
+	padding-right: 5px;
 }
 
 /* -------------------------------------- */
-
-/* PC */
-@media (max-width: 1130px) {
-	.header__container {
-		max-width: 970px;
-	}
-}
 
 /* Tablet */
 @media (max-width: 991.98px) {
-	.header__container {
-		max-width: 750px;
-	}
-
 	.menu__item {
-		margin: 0 10px;
+		margin: 0 18px;
 	}
 }
 
 /* Mobile */
 @media (max-width: 767.98px) {
-	.header__menu {
-	justify-content: start;
+	body {
+		padding-top: 35px;
 	}
-
-	.menu__list{
-		margin-top: 30px;
-		margin-left: 25px;
-	}
-
-	.menu__item{
-		margin-bottom: 25px;
-	}
-
-	.header__logo {
-		flex: 0 0 37px;
-		overflow: hidden;
-	}
-
 	.header__container {
 		margin-top: 4px;
-		min-height: 52px;
+		min-height: 30px;
 	}
 
-	.header__button {
-		margin-left: 40px;
+	.header__menu {
+		justify-content: start;
+		margin: 0 0 60px 40px;
+		padding-left: 15px;
 	}
+
+	.menu__list {
+		margin-top: 60px;
+	}
+
+	.menu__item {
+		margin: 0 0 25px 0px;
+	}
+
+	.menu__link {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 29px;
+		letter-spacing: 0.05em;
+	}
+
+	.menu__hidden {
+		display: block;
+		margin: 50px 0 35px;
+	}
+
+	.hidden__title {
+		margin-bottom: 20px;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 22px;
+		line-height: 161.5%;
+		color: var(--black);
+	}
+
+	.hidden__p {
+		margin: 0;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 161.5%;
+	}
+
+	.button {
+		margin: 0;
+		text-align: left;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 29px;
+		letter-spacing: 0.05em;
+	}
+
+	.button:hover::before {
+		left: -8px;
+	}
+
 	.header__language {
 		display: none;
 	}
 
-	.navbar-toggler{
+	.navbar-toggler {
 		padding: 0;
 		height: 30px;
 		width: 45px;
@@ -160,9 +207,14 @@ body {
 		align-items: center;
 		border: none;
 	}
-	
+
+	.collapsing {
+		display: block;
+	}
+
+	.collapse {
+		display: block;
+	}
 }
 
 /* -------------------------------------------------------- */
-
-
